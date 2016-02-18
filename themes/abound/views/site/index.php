@@ -14,7 +14,7 @@ $baseUrl = Yii::app()->theme->baseUrl;
                 'title'=>'<strong class="">Dispo Redirect Configuration</strong>',
             ));
         ?>
-        <?php echo CHtml::link('Create new', array('/dispoConfiguration/create'), array('class'=>'btn btn-primary',"style"=>"position: relative;top: 43px;left: 2px;")); ?>
+        <?php echo CHtml::link('Create new', array('/dispoConfiguration/create'), array('class'=>'btn btn-primary')); ?>
 
         <?php $this->widget('zii.widgets.grid.CGridView', array(
             'id'=>'dispo-configuration-grid',
