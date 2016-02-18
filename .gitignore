@@ -10,3 +10,4 @@ protected/config/*
 .idea/
 .phpintel/
 /assets/*
+/index.php
