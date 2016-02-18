@@ -17,7 +17,7 @@ class DispoController extends Controller
             $newDispoRequest->mobile_number = $phone_number;
             $newDispoRequest->request_parameters = json_encode($_GET);
             $newDispoRequest->request_from = $_SERVER['REMOTE_ADDR'];
-            $newDispoRequest->response_message = $resultMessage;
+            $newDispoRequest->response_message = json_encode($resultMessage);
             if (!$newDispoRequest->save()) {
                 throw new CHttpException(500,"Error Processing Request" .CHtml::errorSummary($newDispoRequest) );
             }
