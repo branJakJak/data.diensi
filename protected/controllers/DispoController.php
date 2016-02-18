@@ -20,10 +20,11 @@ class DispoController extends Controller
             $newDispoRequest->response_message = json_encode($resultMessage);
             if (!$newDispoRequest->save()) {
                 throw new CHttpException(500,"Error Processing Request" .CHtml::errorSummary($newDispoRequest) );
+            }else{
+                header("Content-Type: application/json");
+                echo json_encode($resultMessage);
             }
-            $newDispoRequest->save();
-            header("Content-Type: application/json");
-            echo json_encode($resultMessage);
+            Yii::app()->end();
         }else{
             throw new CHttpException(404, "Cant find dispo configuration for this " . CHtml::encode($dispo_name));
         }

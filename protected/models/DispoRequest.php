@@ -40,7 +40,7 @@ class DispoRequest extends CActiveRecord
 			array('request_parameters, date_submitted', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, dispo_conf_id, mobile_number, request_parameters, request_from, date_submitted', 'safe', 'on'=>'search'),
+			array('id, dispo_conf_id, mobile_number, request_parameters, request_from, date_submitted,response_message', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -118,5 +118,6 @@ class DispoRequest extends CActiveRecord
 		if ($this->isNewRecord) {
 			$this->date_submitted =  date("Y-m-d H:i:s");
 		}
+		return parent::beforeSave();
 	}
 }
