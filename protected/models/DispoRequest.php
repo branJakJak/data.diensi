@@ -17,6 +17,7 @@
  */
 class DispoRequest extends CActiveRecord
 {
+	public $response_message;
 	/**
 	 * @return string the associated database table name
 	 */

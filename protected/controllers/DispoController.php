@@ -12,7 +12,6 @@ class DispoController extends Controller
         if($foundDispoConf){
             $dispoSender = Yii::app()->dispo_sender;
             $resultMessage = $dispoSender->sendRequest($foundDispoConf->server_ip, $phone_number, $_GET);
-
             $newDispoRequest = new DispoRequest();
             $newDispoRequest->dispo_conf_id = $foundDispoConf->id;
             $newDispoRequest->mobile_number = $phone_number;
