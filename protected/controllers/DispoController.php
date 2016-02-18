@@ -19,7 +19,7 @@ class DispoController extends Controller
             $newDispoRequest->request_from = $_SERVER['REMOTE_ADDR'];
             $newDispoRequest->response_message = $resultMessage;
             if (!$newDispoRequest->save()) {
-                throw new CHttpException(500,"Error Processing Request");
+                throw new CHttpException(500,"Error Processing Request" .CHtml::errorSummary($newDispoRequest) );
             }
             $newDispoRequest->save();
             header("Content-Type: application/json");
