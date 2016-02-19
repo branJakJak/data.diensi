@@ -35,8 +35,8 @@ class DispoRequest extends CActiveRecord
 		return array(
 			array('mobile_number', 'required'),
 			array('dispo_conf_id', 'numerical', 'integerOnly'=>true),
-			array('mobile_number, request_from, response_message', 'length', 'max'=>255),
-			array('request_parameters, date_submitted', 'safe'),
+			array('mobile_number, request_from', 'length', 'max'=>255),
+			array('request_parameters, date_submitted,response_message', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, dispo_conf_id, mobile_number, request_parameters, request_from, date_submitted, response_message', 'safe', 'on'=>'search'),
