@@ -22,7 +22,8 @@ class SendDispoRequest extends CApplicationComponent
             "hopper_priority"=>$dispoConfiguration->hopper_priority
         );
         $httpParams = array_merge($httpParams, $other_http_parameters);
-        $curlURL = "https://" . $dispoConfiguration->server_ip . "/vicidial/non_agent_api.php?";
+        // $curlURL = "https://" . $dispoConfiguration->server_ip . "/vicidial/non_agent_api.php?";
+        $curlURL = $dispoConfiguration->server_ip;//have to change
         $curlURL .= http_build_query($httpParams);
         $curlres = curl_init($curlURL);
         curl_setopt($curlres, CURLOPT_RETURNTRANSFER, true);
