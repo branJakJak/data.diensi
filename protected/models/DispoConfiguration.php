@@ -67,7 +67,7 @@ class DispoConfiguration extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'dispo_name' => 'Dispo Name',
-			'server_ip' => 'Server',
+			'server_ip' => 'Server URL',
 			'list_id' => 'List',
 			'source' => 'Source',
 			'user' => 'User',
