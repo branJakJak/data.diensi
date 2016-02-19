@@ -17,8 +17,8 @@
 					'itemCssClass'=>'item-test',
                     'encodeLabel'=>false,
                     'items'=>array(
-                        array('label'=>'Home', 'url'=>array('/site/index'),'visible'=>Yii::app()->user->isGuest),
-                        array('label'=>'Logs', 'url'=>array('/dispoRequest/admin'),'visible'=>Yii::app()->user->isGuest),
+                        array('label'=>'Home', 'url'=>array('/site/index'),'visible'=>!Yii::app()->user->isGuest),
+                        array('label'=>'Logs', 'url'=>array('/dispoRequest/admin'),'visible'=>!Yii::app()->user->isGuest),
                         // array('label'=>'My Account <span class="caret"></span>', 'url'=>'#','itemOptions'=>array('class'=>'dropdown','tabindex'=>"-1"),'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>"dropdown"), 
        //                  'items'=>array(
        //                      array('label'=>'My Messages <span class="badge badge-warning pull-right">26</span>', 'url'=>'#'),
