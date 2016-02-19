@@ -37,8 +37,6 @@ class SendDispoRequest extends CApplicationComponent
      * @return array
      */
     public function processResult($rawCurlRes){
-        var_dump($rawCurlRes);
-        die();
         $returnMessage = array();
         if (stripos($rawCurlRes, "SUCCESS")) {
             $rawCurlResArr = explode(":", $rawCurlRes);
