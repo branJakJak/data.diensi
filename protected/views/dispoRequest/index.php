@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create DispoRequest', 'url'=>array('create')),
-	array('label'=>'Manage DispoRequest', 'url'=>array('admin')),
+	array('label'=>'Create Dispo Request', 'url'=>array('create')),
+	array('label'=>'Manage Dispo Request', 'url'=>array('admin')),
 );
 ?>
 

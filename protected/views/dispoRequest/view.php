@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List DispoRequest', 'url'=>array('index')),
-	array('label'=>'Create DispoRequest', 'url'=>array('create')),
-	array('label'=>'Update DispoRequest', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete DispoRequest', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage DispoRequest', 'url'=>array('admin')),
+	array('label'=>'List Dispo Request', 'url'=>array('index')),
+	array('label'=>'Create Dispo Request', 'url'=>array('create')),
+	array('label'=>'Update Dispo Request', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Delete Dispo Request', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Manage Dispo Request', 'url'=>array('admin')),
 );
 ?>
 

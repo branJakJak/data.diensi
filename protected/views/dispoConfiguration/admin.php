@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List DispoConfiguration', 'url'=>array('index')),
-	array('label'=>'Create DispoConfiguration', 'url'=>array('create')),
+	array('label'=>'List Dispo Configuration', 'url'=>array('index')),
+	array('label'=>'Create Dispo Configuration', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
