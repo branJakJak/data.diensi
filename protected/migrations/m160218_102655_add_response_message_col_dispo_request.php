@@ -5,11 +5,11 @@ class m160218_102655_add_response_message_col_dispo_request extends CDbMigration
 
 	public function safeUp()
 	{
-		$this->addColumn("tbl_dispo_configuration", "response_message", "string");
+		$this->addColumn("tbl_dispo_request", "response_message", "string");
 	}
 
 	public function safeDown()
 	{
-		$this->dropColumn("tbl_dispo_configuration", "response_message");
+		$this->dropColumn("tbl_dispo_request", "response_message");
 	}
 }

@@ -27,5 +27,6 @@ $this->menu=array(
 		'request_parameters',
 		'request_from',
 		'date_submitted',
+		'response_message',
 	),
 )); ?>

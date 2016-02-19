@@ -21,6 +21,7 @@ $baseUrl = Yii::app()->theme->baseUrl;
             'dataProvider'=>$model->search(),
             'filter'=>$model,
             'columns'=>array(
+                'source',
                 'dispo_name',
                 'list_id',
                 array(

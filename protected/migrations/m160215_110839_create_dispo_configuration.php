@@ -24,9 +24,9 @@ class m160215_110839_create_dispo_configuration extends CDbMigration
 
 	public function safeDown()
 	{
-		$this->dropForeignKey("tbl_dispo_request_fk","tbl_dispo_request_fk");
-		$this->dropTable9("tbl_dispo_request");
+		$this->dropForeignKey("tbl_dispo_request_fk","tbl_dispo_request");
 		$this->dropTable("tbl_dispo_configuration");
+		$this->dropTable("tbl_dispo_request");
 	}
 
 }

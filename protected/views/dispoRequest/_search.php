@@ -41,6 +41,11 @@
 		<?php echo $form->textField($model,'date_submitted'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model,'response_message'); ?>
+		<?php echo $form->textField($model,'response_message',array('size'=>60,'maxlength'=>255)); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>

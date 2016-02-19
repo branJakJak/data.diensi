@@ -9,15 +9,14 @@
  * @property string $mobile_number
  * @property string $request_parameters
  * @property string $request_from
- * @property string $response_message
  * @property string $date_submitted
+ * @property string $response_message
  *
  * The followings are the available model relations:
  * @property TblDispoConfiguration $dispoConf
  */
 class DispoRequest extends CActiveRecord
 {
-	public $response_message;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -36,11 +35,11 @@ class DispoRequest extends CActiveRecord
 		return array(
 			array('mobile_number', 'required'),
 			array('dispo_conf_id', 'numerical', 'integerOnly'=>true),
-			array('mobile_number, request_from,response_message', 'length', 'max'=>255),
+			array('mobile_number, request_from, response_message', 'length', 'max'=>255),
 			array('request_parameters, date_submitted', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, dispo_conf_id, mobile_number, request_parameters, request_from, date_submitted,response_message', 'safe', 'on'=>'search'),
+			array('id, dispo_conf_id, mobile_number, request_parameters, request_from, date_submitted, response_message', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,12 +62,12 @@ class DispoRequest extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'dispo_conf_id' => 'Dispo Configuration',
+			'dispo_conf_id' => 'Dispo Conf',
 			'mobile_number' => 'Mobile Number',
 			'request_parameters' => 'Request Parameters',
 			'request_from' => 'Request From',
-			'response_message' => 'Response Message',
 			'date_submitted' => 'Date Submitted',
+			'response_message' => 'Response Message',
 		);
 	}
 
@@ -95,8 +94,8 @@ class DispoRequest extends CActiveRecord
 		$criteria->compare('mobile_number',$this->mobile_number,true);
 		$criteria->compare('request_parameters',$this->request_parameters,true);
 		$criteria->compare('request_from',$this->request_from,true);
-		$criteria->compare('response_message',$this->response_message,true);
 		$criteria->compare('date_submitted',$this->date_submitted,true);
+		$criteria->compare('response_message',$this->response_message,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -113,6 +112,7 @@ class DispoRequest extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
 	public function beforeSave()
 	{
 		if ($this->isNewRecord) {

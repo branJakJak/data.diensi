@@ -64,18 +64,14 @@ class DispoConfigurationController extends Controller
 	{
 		$model=new DispoConfiguration;
 		$model->server_ip = Yii::app()->params['VICI_SERVER_IP'];
-
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['DispoConfiguration']))
 		{
 			$model->attributes=$_POST['DispoConfiguration'];
-			$model->server_ip = Yii::app()->params['VICI_SERVER_IP'];
-			if($model->save()){
-				Yii::app()->user->setFlash("success","Success! New Configuration is created");
+			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
-			}
 		}
 
 		$this->render('create',array(

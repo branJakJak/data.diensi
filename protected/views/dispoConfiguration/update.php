@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Dispo Configuration', 'url'=>array('index')),
-	array('label'=>'Create Dispo Configuration', 'url'=>array('create')),
-	array('label'=>'View Dispo Configuration', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Dispo Configuration', 'url'=>array('admin')),
+	array('label'=>'List DispoConfiguration', 'url'=>array('index')),
+	array('label'=>'Create DispoConfiguration', 'url'=>array('create')),
+	array('label'=>'View DispoConfiguration', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Manage DispoConfiguration', 'url'=>array('admin')),
 );
 ?>
 

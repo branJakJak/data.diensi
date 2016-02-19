@@ -29,5 +29,9 @@
 	<?php echo CHtml::encode($data->date_submitted); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('response_message')); ?>:</b>
+	<?php echo CHtml::encode($data->response_message); ?>
+	<br />
+
 
 </div>

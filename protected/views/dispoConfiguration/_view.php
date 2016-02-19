@@ -21,5 +21,43 @@
 	<?php echo CHtml::encode($data->list_id); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('source')); ?>:</b>
+	<?php echo CHtml::encode($data->source); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('user')); ?>:</b>
+	<?php echo CHtml::encode($data->user); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('pass')); ?>:</b>
+	<?php echo CHtml::encode($data->pass); ?>
+	<br />
+
+	<?php /*
+	<b><?php echo CHtml::encode($data->getAttributeLabel('function')); ?>:</b>
+	<?php echo CHtml::encode($data->function); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('phone_code')); ?>:</b>
+	<?php echo CHtml::encode($data->phone_code); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('dnc_check')); ?>:</b>
+	<?php echo CHtml::encode($data->dnc_check); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('duplicate_check')); ?>:</b>
+	<?php echo CHtml::encode($data->duplicate_check); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('add_to_hopper')); ?>:</b>
+	<?php echo CHtml::encode($data->add_to_hopper); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('hopper_priority')); ?>:</b>
+	<?php echo CHtml::encode($data->hopper_priority); ?>
+	<br />
+
+	*/ ?>
 
 </div>

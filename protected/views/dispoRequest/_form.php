@@ -49,6 +49,12 @@
 		<?php echo $form->error($model,'date_submitted'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'response_message'); ?>
+		<?php echo $form->textField($model,'response_message',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'response_message'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
