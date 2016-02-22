@@ -14,7 +14,7 @@ class SendDispoRequest extends CApplicationComponent
             "user"=>$dispoConfiguration->user,
             "pass"=>$dispoConfiguration->pass,
             "function"=>$dispoConfiguration->function,
-            "phone_code"=>$dispoConfiguration->phone_code,
+            "phone_code"=>doubleval($dispoConfiguration->phone_code),
             "list_id"=>$dispoConfiguration->list_id,
             "dnc_check"=>$dispoConfiguration->dnc_check,
             "duplicate_check"=>$dispoConfiguration->duplicate_check,
