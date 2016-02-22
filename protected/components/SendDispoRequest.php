@@ -39,7 +39,7 @@ class SendDispoRequest extends CApplicationComponent
      */
     public function processResult($rawCurlRes){
         $returnMessage = array();
-        if (stripos($rawCurlRes, "SUCCESS")) {
+        if (stripos($rawCurlRes, "SUCCESS") !== FALSE) {
             $rawCurlResArr = explode(":", $rawCurlRes);
             $returnMessage = array(
                 "type"=>"success",
