@@ -8,7 +8,7 @@ class DispoController extends Controller
          * @var SendDispoRequest $dispoSender
          */
         /*search for that dispo*/
-        $phone_number = doubleval($phone_number);
+        $phone_number = ltrim($phone_number, '0');
         $foundDispoConf = DispoConfiguration::model()->findByAttributes(array("dispo_name" => $dispo_name));
         if($foundDispoConf){
             $dispoSender = Yii::app()->dispo_sender;
