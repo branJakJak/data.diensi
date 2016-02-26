@@ -8,7 +8,7 @@ class DispoController extends Controller
          * @var SendDispoRequest $dispoSender
          */
         /*search for that dispo*/
-        $phoneNumberFinal = clone $phone_number;
+        $phoneNumberFinal = $phone_number;
         $phoneNumberFinal = ltrim($phoneNumberFinal, '0');
         $foundDispoConf = DispoConfiguration::model()->findByAttributes(array("dispo_name" => $dispo_name));
         if($foundDispoConf){
