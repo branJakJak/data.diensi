@@ -8,14 +8,15 @@ class DispoController extends Controller
          * @var SendDispoRequest $dispoSender
          */
         /*search for that dispo*/
-        $phone_number = ltrim($phone_number, '0');
+        $phoneNumberFinal = clone $phone_number;
+        $phoneNumberFinal = ltrim($phoneNumberFinal, '0');
         $foundDispoConf = DispoConfiguration::model()->findByAttributes(array("dispo_name" => $dispo_name));
         if($foundDispoConf){
             $dispoSender = Yii::app()->dispo_sender;
-            $resultMessage = $dispoSender->sendRequest($foundDispoConf, $phone_number, $_GET);
+            $resultMessage = $dispoSender->sendRequest($foundDispoConf, $phoneNumberFinal, $_GET);
             $newDispoRequest = new DispoRequest();
             $newDispoRequest->dispo_conf_id = $foundDispoConf->id;
-            $newDispoRequest->mobile_number = $phone_number;
+            $newDispoRequest->mobile_number = $phoneNumberFinal;
             $newDispoRequest->request_parameters = json_encode($_GET);
             $newDispoRequest->request_from = $_SERVER['REMOTE_ADDR'];
             $newDispoRequest->response_message = json_encode($resultMessage);
