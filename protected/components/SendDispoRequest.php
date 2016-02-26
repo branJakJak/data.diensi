@@ -8,6 +8,7 @@ class SendDispoRequest extends CApplicationComponent
      */
     public function sendRequest(DispoConfiguration $dispoConfiguration, $mobileNumber, $other_http_parameters)
     {
+        $mobileNumber = doubleval($mobileNumber);
         $httpParams = array(
             "phone_number" => $mobileNumber,
             "source"=>$dispoConfiguration->source,
