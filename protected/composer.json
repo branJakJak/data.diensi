@@ -1,11 +1,21 @@
 {
     "name": "kevin/protected",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.zendframework.com/"
+        }
+    ],    
     "authors": [
         {
-            "name": "kebyang",
-            "email": "kelvo_link@yahoo.com"
+            "name": "something",
+            "email": "something@gmail.com"
         }
     ],
+    "require": {
+        "zendframework/zend-config": "2.*",
+        "zendframework/zend-http": "2.*"
+    },    
     "require-dev": {
         "phpunit/phpunit": "3.7.*",
         "phpunit/phpunit-selenium": ">=1.2",

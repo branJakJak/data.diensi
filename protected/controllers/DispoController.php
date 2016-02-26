@@ -8,6 +8,7 @@ class DispoController extends Controller
          * @var SendDispoRequest $dispoSender
          */
         /*search for that dispo*/
+        $phone_number = doubleval($phone_number);
         $foundDispoConf = DispoConfiguration::model()->findByAttributes(array("dispo_name" => $dispo_name));
         if($foundDispoConf){
             $dispoSender = Yii::app()->dispo_sender;
@@ -24,6 +25,15 @@ class DispoController extends Controller
                 header("Content-Type: application/json");
                 echo json_encode($resultMessage);
             }
+            //check dispo here
+            $injectTableDispo = array("5PF","DELAY8");
+            if(  in_array($foundDispoConf->dispo_name , $injectTableDispo)    ){
+                $spreadSheetInserter = new SpreadSheetInject;
+                $dateInsert = date("Y-m-d H:i:s");
+                // @TODO
+                //$spreadSheetInserter->injectRow($dateInsert , );
+            }
+
             Yii::app()->end();
         }else{
             throw new CHttpException(404, "Cant find dispo configuration for this " . CHtml::encode($dispo_name));
