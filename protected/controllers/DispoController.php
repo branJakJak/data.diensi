@@ -44,6 +44,6 @@ class DispoController extends Controller
         /**
          * Prepare required post data
          */
-        $this->redirect("/dispo/5PRESS/" . $_POST['phone_number'] . '/?' . http_build_query($_POST));
+        $this->redirect("/dispo/NEW/" . $_POST['phone_number'] . '/?' . http_build_query($_POST));
     }
 }
