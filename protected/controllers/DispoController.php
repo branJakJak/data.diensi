@@ -44,6 +44,22 @@ class DispoController extends Controller
         /**
          * Prepare required post data
          */
+        //dont be fooled , this is fullname
+        if (isset($_POST['first_name'])) {
+            $nameArr = explode(" ", $_POST['first_name']);
+            if (isset($nameArr[0])) {
+                $_POST['first_name'] = $nameArr[0];
+            }else{
+                $_POST['first_name'] = '';
+            }
+            if (isset($nameArr[1])) {
+                $_POST['last_name'] = $nameArr[1];
+            }else{
+                $_POST['first_name'] = '';
+            }
+            
+        }
+        
         $this->redirect("/dispo/NEW/" . $_POST['phone_number'] . '/?' . http_build_query($_POST));
     }
 }
