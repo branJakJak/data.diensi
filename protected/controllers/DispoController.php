@@ -57,9 +57,12 @@ class DispoController extends Controller
             }else{
                 $_POST['first_name'] = '';
             }
-            
         }
-        
-        $this->redirect("/dispo/NEW/" . $_POST['phone_number'] . '/?' . http_build_query($_POST));
+        if (isset($_POST['phone_number'])) {
+            $_POST['phone_number'] = str_replace(" ", "", $_POST['phone_number']);
+            $_POST['phone_number'] = '0'.$_POST['phone_number'];
+        }
+        file_get_contents('http://data.site8.co/dispo/NEW/'.$_POST['phone_number'] . '/?' . http_build_query($_POST));
+        // $this->redirect("/dispo/NEW/" . $_POST['phone_number'] . '/?' . http_build_query($_POST));
     }
 }
