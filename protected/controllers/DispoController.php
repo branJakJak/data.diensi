@@ -70,6 +70,10 @@ class DispoController extends Controller
             }
             
         }
+        $commentField = 'id='.$_POST['leadid'] ."\r\n";
+        $commentField .= 'adset_id='.$_POST['adid'] . "\r\n";
+        $commentField .= 'created_time='.date("Y-m-d H:i:s");
+        $_POST['comments'] = $commentField;
         file_get_contents('http://data.site8.co/dispo/NEW/'.$_POST['phone_number'] . '/?' . http_build_query($_POST));
         // $this->redirect("/dispo/NEW/" . $_POST['phone_number'] . '/?' . http_build_query($_POST));
     }
