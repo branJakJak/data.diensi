@@ -63,11 +63,11 @@ class DispoController extends Controller
             $_POST['phone_number'] = preg_replace("/[^0-9,.]/", "", $_POST['phone_number']);
             //if starts with 44 
             
-            if (substr($_POST['phone_number'], 0, 2) === '44') {
-                $_POST['phone_number'] = '0' .  substr($_POST['phone_number'], 2, strlen($_POST['phone_number']) -1 );
-            } else {
-                $_POST['phone_number'] = '0' .  $_POST['phone_number'];
-            }
+            // if (substr($_POST['phone_number'], 0, 2) === '44') {
+            //     $_POST['phone_number'] = '0' .  substr($_POST['phone_number'], 2, strlen($_POST['phone_number']) -1 );
+            // } else {
+            //     $_POST['phone_number'] = '0' .  $_POST['phone_number'];
+            // }
             
         }
         $commentField = 'id='.$_POST['leadid'] ."\r\n";
