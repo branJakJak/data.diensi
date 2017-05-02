@@ -64,8 +64,8 @@ class DispoController extends Controller
             //if starts with 44 
             
             if (substr($_POST['phone_number'], 0, 2) === '44') {
-                // $_POST['phone_number'] = '0' .  substr($_POST['phone_number'], 2, strlen($_POST['phone_number']) -1 );
-                $_POST['phone_number'] = substr($_POST['phone_number'], 2, strlen($_POST['phone_number']) -1 );
+                $_POST['phone_number'] = '0' .  substr($_POST['phone_number'], 2, strlen($_POST['phone_number']) -1 );
+                // $_POST['phone_number'] = substr($_POST['phone_number'], 2, strlen($_POST['phone_number']) -1 );
             } 
             // else {
             //     $_POST['phone_number'] = '0' .  $_POST['phone_number'];
