@@ -63,10 +63,12 @@ class DispoController extends Controller
             $_POST['phone_number'] = preg_replace("/[^0-9,.]/", "", $_POST['phone_number']);
             //if starts with 44 
             
-            if (substr($_POST['phone_number'], 0, 2) === '44') {
-                $_POST['phone_number'] = '0' .  substr($_POST['phone_number'], 2, strlen($_POST['phone_number']) -1 );
+            if (substr($_POST['phone_number'], 0, 2) === '44' && (  isset($_POST['phone_number'][2])  && $_POST['phone_number'][2] != '0')  ) {
+                $_POST['phone_number'] = '0' .  substr($_POST['phone_number'], 2, strlen($_POST['phone_number']) -1 );//start with 3rd character
                 // $_POST['phone_number'] = substr($_POST['phone_number'], 2, strlen($_POST['phone_number']) -1 );
-            } 
+            } else if (substr($_POST['phone_number'], 0, 2) === '44' && (  isset($_POST['phone_number'][2])  && $_POST['phone_number'][2] == '0')  ) {
+                $_POST['phone_number'] = '0' .  substr($_POST['phone_number'], 3, strlen($_POST['phone_number']) -1 );//start with the 4th character , to exclude 0
+            }
             // else {
             //     $_POST['phone_number'] = '0' .  $_POST['phone_number'];
             // }
