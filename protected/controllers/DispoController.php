@@ -94,12 +94,7 @@ class DispoController extends Controller
                 $_POST['phone_number'] = '0' .  $_POST['phone_number'];
             }
         }
-        $clonedPostData = $_POST;
-        unset($clonedPostData['first_name']);
-        unset($clonedPostData['last_name']);
-        unset($clonedPostData['phone_number']);
-        unset($clonedPostData['email']);
-        $_POST['comments'] = @$clonedPostData;
+        $_POST['comments'] = $_POST['product'];
         file_get_contents('http://data.site8.co/dispo/DND/'.$_POST['phone_number'] . '/?' . http_build_query($_POST));
     }
 }
