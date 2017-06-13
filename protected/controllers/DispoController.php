@@ -71,9 +71,6 @@ class DispoController extends Controller
             } else if (  isset($_POST['phone_number'][0])  && $_POST['phone_number'][0] == '7')  {
                 $_POST['phone_number'] = '0' .  $_POST['phone_number'];
             }
-            // else {
-            //     $_POST['phone_number'] = '0' .  $_POST['phone_number'];
-            // }
             
         }
         $commentField = 'id='.$_POST['leadid'] ."\r\n";
@@ -81,6 +78,28 @@ class DispoController extends Controller
         $commentField .= 'created_time='.date("Y-m-d H:i:s");
         $_POST['comments'] = $commentField;
         file_get_contents('http://data.site8.co/dispo/NEW/'.$_POST['phone_number'] . '/?' . http_build_query($_POST));
-        // $this->redirect("/dispo/NEW/" . $_POST['phone_number'] . '/?' . http_build_query($_POST));
+    }
+    public function actionUpi()
+    {
+        if (isset($_POST['phone_number'])) {
+            $_POST['phone_number'] = str_replace(" ", "", $_POST['phone_number']);
+            $_POST['phone_number'] = preg_replace("/[^0-9,.]/", "", $_POST['phone_number']);
+            //if starts with 44 
+            if (substr($_POST['phone_number'], 0, 2) === '44' && (  isset($_POST['phone_number'][2])  && $_POST['phone_number'][2] != '0')  ) {
+                $_POST['phone_number'] = '0' .  substr($_POST['phone_number'], 2, strlen($_POST['phone_number']) -1 );//start with 3rd character
+                // $_POST['phone_number'] = substr($_POST['phone_number'], 2, strlen($_POST['phone_number']) -1 );
+            } else if (substr($_POST['phone_number'], 0, 2) === '44' && (  isset($_POST['phone_number'][2])  && $_POST['phone_number'][2] == '0')  ) {
+                $_POST['phone_number'] = '0' .  substr($_POST['phone_number'], 3, strlen($_POST['phone_number']) -1 );//start with the 4th character , to exclude 0
+            } else if (  isset($_POST['phone_number'][0])  && $_POST['phone_number'][0] == '7')  {
+                $_POST['phone_number'] = '0' .  $_POST['phone_number'];
+            }
+        }
+        $clonedPostData = $_POST;
+        unset($clonedPostData['first_name']);
+        unset($clonedPostData['last_name']);
+        unset($clonedPostData['phone_number']);
+        unset($clonedPostData['email']);
+        $_POST['comments'] = @$clonedPostData;
+        file_get_contents('http://data.site8.co/dispo/DND/'.$_POST['phone_number'] . '/?' . http_build_query($_POST));
     }
 }
