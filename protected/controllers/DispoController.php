@@ -95,6 +95,11 @@ class DispoController extends Controller
             }
         }
         $_POST['comments'] = $_POST['product'];
-        file_get_contents('http://data.site8.co/dispo/DND/'.$_POST['phone_number'] . '/?' . http_build_query($_POST));
+        $product = $_POST['product'];
+        if (strpos($product, 'Lloyds')  !== FALSE) {            
+            file_get_contents('http://data.site8.co/dispo/Lloyds/'.$_POST['phone_number'] . '/?' . http_build_query($_POST));
+        } else {
+            file_get_contents('http://data.site8.co/dispo/DND/'.$_POST['phone_number'] . '/?' . http_build_query($_POST));
+        }
     }
 }
